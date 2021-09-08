@@ -2,7 +2,7 @@
 
 [x] Install dependencies
 
-[ ] Nasa API key
+[x] Nasa API key
 
 [ ] Fetch from NASA Api in App using axios
 
