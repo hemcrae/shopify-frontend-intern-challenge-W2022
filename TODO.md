@@ -1,0 +1,15 @@
+# Spacestagram - To-do List
+
+[ ] Install dependencies
+
+[ ] Fetch from NASA Api in App using axios
+
+[ ] Display img in App
+
+[ ] Create dumb component card with like button, title, date of capture (earth_date), and image
+
+[ ] Style using scss
+
+[ ] Local storage
+
+[ ] Date picker
