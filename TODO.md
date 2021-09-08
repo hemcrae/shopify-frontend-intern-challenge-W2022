@@ -1,6 +1,8 @@
 # Spacestagram - To-do List
 
-[ ] Install dependencies
+[x] Install dependencies
+
+[ ] Nasa API key
 
 [ ] Fetch from NASA Api in App using axios
 
