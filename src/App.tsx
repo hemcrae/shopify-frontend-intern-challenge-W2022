@@ -20,24 +20,28 @@ export const App: React.FC = ({
 
   const ApiUrl = `https://api.nasa.gov/planetary/apod`
 
-  const [apod, setApod] = useState({})
+  const [apod, setApod] = useState<NasaResponse[]>([])
 
   if (key === undefined) {
     throw new Error("No NASA API key defined")
   }
 
   useEffect(() => {
-    axios.get<NasaResponse>(`${ApiUrl}`, {
+    axios.get<NasaResponse[]>(`${ApiUrl}`, {
       params: {
-        api_key: key 
+        api_key: key,
+        count: 10
       }
     })
-    .then((data) => (setApod(data.data))
+    .then((res) => (setApod(res.data))
   )}, [])
 
   return (
     <>
       <h1>Spacestagram</h1>
+        {apod.map(({ url }) => (
+          <img className="image" src={url} key={url}/>
+        ))}
     </>
   )
 }

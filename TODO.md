@@ -6,7 +6,7 @@
 
 [x] Fetch from NASA Api in App using axios
 
-[ ] Display img in App
+[x] Display img in App
 
 [ ] Create dumb component card with like button, title, date of capture (earth_date), and image
 
