@@ -1,45 +1,46 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import './App.css'
+interface NasaResponse {
+  copyright: string;
+  date: string;
+  explanation: string;
+  hdurl: string;
+  media_type: string;
+  service_version: string;
+  title: string;
+  url: string;
+}
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App: React.FC = ({
+
+}) => {
+
+  const key: string = import.meta.env.VITE_NASA_API_KEY as string;
+
+  const ApiUrl = `https://api.nasa.gov/planetary/apod`
+
+  const [apod, setApod] = useState({})
+
+  if (key === undefined) {
+    throw new Error("No NASA API key defined")
+  }
+
+  useEffect(() => {
+    axios.get<NasaResponse>(`${ApiUrl}`, {
+      params: {
+        api_key: key 
+      }
+    })
+    .then((data) => (setApod(data.data))
+  )}, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <>
+      <h1>Spacestagram</h1>
+    </>
   )
 }
 
-export default App
+
+

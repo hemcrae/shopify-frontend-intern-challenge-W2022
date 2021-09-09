@@ -4,7 +4,7 @@
 
 [x] Nasa API key
 
-[ ] Fetch from NASA Api in App using axios
+[x] Fetch from NASA Api in App using axios
 
 [ ] Display img in App
 
