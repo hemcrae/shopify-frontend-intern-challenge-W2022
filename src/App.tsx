@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import './App.css'
-interface NasaResponse {
+import './App.scss'
+export interface NasaApodItem {
   copyright: string;
   date: string;
   explanation: string;
@@ -20,14 +20,14 @@ export const App: React.FC = ({
 
   const ApiUrl = `https://api.nasa.gov/planetary/apod`
 
-  const [apod, setApod] = useState<NasaResponse[]>([])
+  const [apod, setApod] = useState<NasaApodItem[]>([])
 
   if (key === undefined) {
     throw new Error("No NASA API key defined")
   }
 
   useEffect(() => {
-    axios.get<NasaResponse[]>(`${ApiUrl}`, {
+    axios.get<NasaApodItem[]>(`${ApiUrl}`, {
       params: {
         api_key: key,
         count: 10
