@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './App.scss'
+import { Card } from './components/Card/Card';
 export interface NasaApodItem {
   copyright: string;
   date: string;
@@ -39,8 +40,8 @@ export const App: React.FC = ({
   return (
     <>
       <h1>Spacestagram</h1>
-        {apod.map(({ url }) => (
-          <img className="image" src={url} key={url}/>
+        {apod.map(({ url, title, explanation, date }) => (
+          <Card url={url} key={url} title={title} explanation={explanation} date={date}/>
         ))}
     </>
   )

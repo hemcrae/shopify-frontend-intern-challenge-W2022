@@ -8,7 +8,7 @@
 
 [x] Display img in App
 
-[ ] Create dumb component card with like button, title, date of capture (earth_date), and image
+[x] Create dumb component card with like button, title, date of capture (earth_date), and image
 
 [ ] Style using scss
 
