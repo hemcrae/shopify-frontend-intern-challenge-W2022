@@ -1,0 +1,13 @@
+@use './abstract/mixins.scss' as *;
+@use './abstract/variables.scss' as *;
+
+* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: $bg-color;
+}
+
+.heading {
+  @include heading;
+}

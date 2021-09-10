@@ -1,0 +1,20 @@
+@use './variables.scss' as *;
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin heading {
+  color: $font-color;
+  font-family: $heading-font;
+  font-weight: 700;
+  font-size: 2rem;
+}
