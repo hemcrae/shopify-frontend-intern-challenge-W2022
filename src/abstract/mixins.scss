@@ -13,8 +13,15 @@
 }
 
 @mixin heading {
-  color: $font-color;
+  color: $dark-blue;
   font-family: $heading-font;
   font-weight: 700;
   font-size: 2rem;
+}
+
+@mixin text {
+  color: $dark-blue;
+  font-family: $text-font;
+  font-weight: 400;
+  font-size: 0.75rem;
 }

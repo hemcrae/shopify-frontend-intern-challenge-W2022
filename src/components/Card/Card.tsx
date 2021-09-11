@@ -1,5 +1,4 @@
 import React from 'react';
-import { NasaApodItem } from '../../App'
 import classes from './Card.module.scss'
 
 interface CardProps { 
@@ -11,20 +10,24 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => {
   return ( 
-    <div className={classes.card}>
-      <img className={classes.image} src={url}/>
-      <h2 className={classes.title}>
-        {title}
-      </h2>
-      <h3 className={classes.date}>
-        {date}
-      </h3>
-      <p className={classes.explanation}>
-        {explanation}
-      </p>
-      <button className={classes.button}>
-        Like
-      </button>
-    </div>
+    <article className={classes.card}>
+      <img className={classes.image} src={url} alt="Astronomy Picture of the Day"/>
+      <div className={classes.content}>
+        <div className={classes.heading}>
+          <h2 className={classes.title}>
+            {title}
+          </h2>
+          <time className={classes.date}>
+            {date}
+          </time>
+        </div>
+        <p className={classes.explanation}>
+          {explanation}
+        </p>
+        <button className={classes.button}>
+          Like
+        </button>
+      </div>
+    </article>
   )
 }

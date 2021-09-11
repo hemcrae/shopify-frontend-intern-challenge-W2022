@@ -1,0 +1,53 @@
+@use '../../abstract/mixins.scss' as *;
+@use '../../abstract/variables.scss' as *;
+
+.card {
+  width: 100%;
+  margin: 0.5rem 0;
+  background-color: $lightest-grey;
+}
+
+.image { 
+  max-width: 100%;
+}
+
+.content {
+  padding: 0.5rem;
+}
+
+.heading {
+  display: flex;
+}
+
+.title, .date { 
+  font-family: $heading-font;
+  font-weight: 700;
+} 
+
+.title {
+  font-size: 1rem;
+  color: $dark-blue;
+}
+
+.date { 
+  font-size: 0.5rem;
+  color: $grey-blue;
+  white-space: nowrap
+}
+
+.explanation { 
+  @include text;
+}
+
+.button {
+  background-color: $dark-blue;
+  border-color: transparent;
+  border-style: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: $text-font;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.125rem 0.75rem;
+}
+
