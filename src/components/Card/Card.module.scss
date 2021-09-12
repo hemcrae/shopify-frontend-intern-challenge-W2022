@@ -17,26 +17,47 @@
 
 .heading {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  // border-bottom: 1px solid $light-grey;
 }
 
 .title, .date { 
   font-family: $heading-font;
   font-weight: 700;
+  line-height: 1.6;
 } 
 
 .title {
   font-size: 1rem;
   color: $dark-blue;
+  margin-bottom: 1rem;
 }
 
 .date { 
   font-size: 0.5rem;
   color: $grey-blue;
-  white-space: nowrap
+  white-space: nowrap;
+  margin-top: 0.4rem;
 }
 
 .explanation { 
   @include text;
+  position: relative;
+
+  margin-bottom: 1.5rem;
+  height: 70px;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    display: block;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(241,241,241,1) 100%);
+  }
 }
 
 .button {
