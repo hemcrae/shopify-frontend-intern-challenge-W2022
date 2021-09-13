@@ -14,4 +14,5 @@ body {
 
 .heading {
   @include heading;
+  text-align: center;
 }
