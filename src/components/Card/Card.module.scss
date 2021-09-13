@@ -4,22 +4,30 @@
 .card {
   width: 100%;
   margin: 0.5rem 0;
+  padding: 0.5rem;
   background-color: $lightest-grey;
+
+  &:hover {
+    outline: 1px solid $light-grey;
+  }
 }
 
 .image { 
   max-width: 100%;
 }
 
-.content {
-  padding: 0.5rem;
-}
 
 .heading {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin: 0.5rem 0;
   // border-bottom: 1px solid $light-grey;
+}
+
+.heading, .explanation, .footer {
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .title, .date { 
@@ -31,7 +39,6 @@
 .title {
   font-size: 1rem;
   color: $dark-blue;
-  margin-bottom: 1rem;
 }
 
 .date { 
@@ -60,7 +67,24 @@
   }
 }
 
-.button {
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expandButton {
+  background-color: transparent;
+  border-color: transparent;
+  border-style: none;
+  border-radius: 2px;
+  color: $dark-blue;
+  font-family: $text-font;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.likeButton {
   background-color: $dark-blue;
   border-color: transparent;
   border-style: none;
