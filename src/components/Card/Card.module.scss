@@ -82,16 +82,12 @@
 
 .expandButton {
   background-color: transparent;
-  border-color: transparent;
-  border-style: none;
-  border-radius: 2px;
   color: $dark-blue;
-  font-family: $text-font;
   font-size: 0.75rem;
   font-weight: 400;
-  cursor: pointer;
   text-transform: uppercase;
   padding: 0.125rem;
+  @include button;
 
   &:hover {
     outline: 1px solid $light-grey;
@@ -100,14 +96,10 @@
 
 .likeButton {
   background-color: $dark-blue;
-  border-color: transparent;
-  border-style: none;
-  border-radius: 2px;
   color: #FFF;
-  cursor: pointer;
-  font-family: $text-font;
   font-size: 1rem;
   font-weight: 300;
   padding: 0.125rem 1rem;
+  @include button;
 }
 

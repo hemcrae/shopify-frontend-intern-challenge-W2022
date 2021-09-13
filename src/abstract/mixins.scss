@@ -26,3 +26,11 @@
   font-size: 0.75rem;
   line-height: 1.5;
 }
+
+@mixin button { 
+  border-color: transparent;
+  border-style: none;
+  border-radius: 2px;
+  font-family: $text-font;
+  cursor: pointer;
+}
