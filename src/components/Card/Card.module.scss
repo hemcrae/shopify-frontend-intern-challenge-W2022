@@ -16,8 +16,12 @@
     width: 350px;
   }
 
-  @include desktop {
+  @include laptop { 
     width: 450px;
+  }
+
+  @include desktop {
+    width: 500px;
   }
 }
 
@@ -161,5 +165,9 @@
     font-size: 1.25rem;
     padding: 0.5rem 2rem;
   }
+}
+
+.likeButtonActive { 
+  background-color: palevioletred;
 }
 

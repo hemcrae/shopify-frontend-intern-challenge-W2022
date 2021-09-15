@@ -12,6 +12,7 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => {
 
   const [showElement, setShowElement] = useState(false);
+  const [liked, setLiked] = useState(false);
   
   return ( 
     <article className={classes.card}>
@@ -33,7 +34,7 @@ export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => 
         <button className={classes.expandButton} onClick={() => setShowElement(!showElement)}>
           Read More
         </button>
-        <button className={classes.likeButton}>
+        <button className={`${classes.likeButton} ${liked ? classes.likeButtonActive : ''}`} onClick={() => setLiked(!liked)}>
           Like
         </button>
       </footer>
