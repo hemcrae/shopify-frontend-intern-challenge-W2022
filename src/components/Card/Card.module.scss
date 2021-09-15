@@ -2,18 +2,33 @@
 @use '../../abstract/variables.scss' as *;
 
 .card {
-  width: 100%;
-  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
   padding: 0.5rem;
   background-color: $lightest-grey;
+  height: fit-content;
+  outline: 1px solid $light-grey;
 
-  &:hover {
-    outline: 1px solid $light-grey;
+  @include tablet {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+    width: 350px;
+  }
+
+  @include desktop {
+    width: 450px;
   }
 }
 
 .image { 
-  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cardImage { 
+  object-fit: contain;
+  width: 100%;
 }
 
 
@@ -22,6 +37,10 @@
   justify-content: space-between;
   align-items: flex-start;
   margin: 0.5rem 0;
+
+  @include desktop { 
+    padding: 1rem 0;
+  }
 }
 
 .heading, .explanation, .footer {
@@ -36,15 +55,33 @@
 } 
 
 .title {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: $dark-blue;
+
+  @include tablet {
+    font-size: 1.25rem;
+  }
+
+  @include desktop { 
+    font-size: 1.5rem;
+  }
 }
 
 .date { 
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   color: $grey-blue;
   white-space: nowrap;
-  margin-top: 0.4rem;
+  margin-top: 0.2rem;
+  margin-left: 0.5rem;
+
+  @include tablet {
+    font-size: 0.9rem;
+    margin-top: 0.4rem
+  }
+
+  @include desktop { 
+    font-size: 1rem;
+  }
 }
 
 .explanation { 
@@ -83,23 +120,46 @@
 .expandButton {
   background-color: transparent;
   color: $dark-blue;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 400;
   text-transform: uppercase;
-  padding: 0.125rem;
+  padding: 0.5rem;
   @include button;
 
-  &:hover {
+  &:active {
     outline: 1px solid $light-grey;
+  }
+
+  @include tablet { 
+    font-size: 1rem;
+  }
+
+  @include desktop { 
+    font-size: 1.25rem;
   }
 }
 
 .likeButton {
+  @include button;
   background-color: $dark-blue;
   color: #FFF;
   font-size: 1rem;
   font-weight: 300;
   padding: 0.125rem 1rem;
-  @include button;
+  border-radius: 3px;
+  transition: box-shadow 250ms;
+  &:hover {
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.25);
+  }
+
+  @include tablet { 
+    font-size: 1rem;
+    padding: 0.25rem 1.25rem;
+  }
+  
+  @include desktop { 
+    font-size: 1.25rem;
+    padding: 0.5rem 2rem;
+  }
 }
 

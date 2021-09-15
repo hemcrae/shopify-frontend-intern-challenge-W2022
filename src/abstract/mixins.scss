@@ -17,14 +17,26 @@
   font-family: $heading-font;
   font-weight: 700;
   font-size: 2rem;
+
+  @include tablet { 
+    font-size: 2.5rem;
+  }
+
+  @include desktop {
+    font-size: 4rem;
+  }
 }
 
 @mixin text {
   color: $grey-blue;
   font-family: $text-font;
   font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 1.5;
+  font-size: 0.875rem;
+  line-height: 1.6;
+
+  @include tablet {
+    font-size: 1rem;
+  }
 }
 
 @mixin button { 

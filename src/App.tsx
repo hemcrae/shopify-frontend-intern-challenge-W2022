@@ -40,9 +40,11 @@ export const App: React.FC = ({
   return (
     <>
       <h1 className={classes.heading}>Spacestagram</h1>
+      <div className={classes.cards}>
         {apod.map(({ url, title, explanation, date }) => (
           <Card url={url} key={url} title={title} explanation={explanation} date={date}/>
         ))}
+      </div>
     </>
   )
 }

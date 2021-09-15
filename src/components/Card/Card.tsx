@@ -15,7 +15,9 @@ export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => 
   
   return ( 
     <article className={classes.card}>
-      <img className={classes.image} src={url} alt="Astronomy Picture of the Day"/>
+      <div className={classes.image}>
+        <img className={classes.cardImage} src={url} alt="Astronomy Picture of the Day"/>
+      </div>
       <header className={classes.heading}>
         <h2 className={classes.title}>
           {title}
