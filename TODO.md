@@ -10,7 +10,7 @@
 
 [x] Create dumb component card with like button, title, date of capture (earth_date), and image
 
-[ ] Style using scss
+[x] Style using scss
 
 [ ] Local storage (like button)
 
