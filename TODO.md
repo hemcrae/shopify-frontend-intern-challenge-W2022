@@ -12,6 +12,6 @@
 
 [x] Style using scss
 
-[ ] Local storage (like button)
+[x] Local storage (like button)
 
 [ ] Date picker
