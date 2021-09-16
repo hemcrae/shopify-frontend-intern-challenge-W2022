@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios';
 import classes from './App.module.scss'
 import { Card } from './components/Card/Card';
@@ -31,7 +31,7 @@ export const App: React.FC = ({
     axios.get<NasaApodItem[]>(`${ApiUrl}`, {
       params: {
         api_key: key,
-        count: 10
+        start_date: "2021-09-1",
       }
     })
     .then((res) => (setApod(res.data))
