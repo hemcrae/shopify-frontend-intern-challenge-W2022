@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { FormEvent, useCallback, useEffect, useState } from 'react'
 import axios from 'axios';
 import classes from './App.module.scss'
 import { Card } from './components/Card/Card';
@@ -23,23 +23,32 @@ export const App: React.FC = ({
 
   const [apod, setApod] = useState<NasaApodItem[]>([])
 
+  const [selectedDate, setSelectedDate] = useState('2021-09-01');
+
   if (key === undefined) {
     throw new Error("No NASA API key defined")
   }
+
+  const onChange = useCallback((e: any) => {
+    e.preventDefault();
+    setSelectedDate(e?.target?.value)
+    },[selectedDate])
+
 
   useEffect(() => {
     axios.get<NasaApodItem[]>(`${ApiUrl}`, {
       params: {
         api_key: key,
-        start_date: "2021-09-1",
+        start_date: selectedDate
       }
     })
     .then((res) => (setApod(res.data))
-  )}, [])
+  )}, [selectedDate])
 
   return (
     <>
       <h1 className={classes.heading}>Spacestagram</h1>
+      <input className={classes.input} type="date" min="1995-06-16" value={selectedDate} onChange={(e) => onChange(e)} />
       <div className={classes.cards}>
         {apod.map(({ url, title, explanation, date }) => (
           <Card url={url} key={url} title={title} explanation={explanation} date={date}/>

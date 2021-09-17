@@ -14,4 +14,6 @@
 
 [x] Local storage (like button)
 
-[ ] Date picker
+[x] Date picker
+
+[ ] Date picker - styling
