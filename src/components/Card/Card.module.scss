@@ -1,0 +1,157 @@
+@use '../../abstract/mixins.scss' as *;
+@use '../../abstract/variables.scss' as *;
+
+.card {
+  background-color: $lightest-grey;
+  height: fit-content;
+  margin: 1rem;
+  outline: 1px solid $light-grey;
+
+  @include tablet {
+    margin-bottom: 1.5rem;
+    width: 325px;
+  }
+
+  @include laptop { 
+    margin-bottom: 2rem;
+    width: 350px;
+  }
+
+  @include desktop {
+    width: 375px;
+  }
+}
+
+.cardImage { 
+  object-fit: contain;
+  width: 100%;
+}
+
+.content { 
+  padding: 1rem
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header, .explanation, .footer {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.title {
+  color: $dark-blue;
+  font-size: 1.125rem;
+
+  @include tablet {
+    font-size: 1.25rem;
+  }
+
+  @include desktop { 
+    font-size: 1.5rem;
+  }
+}
+
+.title, .date { 
+  font-family: $heading-font;
+  font-weight: 700;
+  line-height: 1.6;
+} 
+
+
+.date { 
+  color: $grey-blue;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+
+  @include tablet {
+    font-size: 0.9rem;
+    margin-top: 0.4rem
+  }
+}
+
+.explanation { 
+  @include text;
+  height: 70px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(241,241,241,1) 100%);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.showExplanation { 
+  height: auto;
+
+  &::after { 
+    display: none;
+  }
+} 
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expandButton {
+  background-color: transparent;
+  color: $dark-blue;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  @include button;
+
+  &:active {
+    outline: 1px solid $light-grey;
+  }
+
+  @include tablet {
+    font-size: 1rem;
+  } 
+}
+
+.likeButton {
+  @include button;
+  background-color: $dark-blue;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.125rem 1rem;
+  transition: box-shadow 250ms;
+
+  &:hover {
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.25);
+  }
+
+  @include tablet { 
+    font-size: 1rem;
+    padding: 0.25rem 1.25rem;
+  }
+  
+  @include desktop { 
+    font-size: 1.25rem;
+    padding: 0.5rem 2rem;
+  }
+}
+
+.likeButtonActive { 
+  background-color: $active;
+}
+

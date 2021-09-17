@@ -1,0 +1,70 @@
+@use './variables.scss' as *;
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop { 
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin heading {
+  color: $dark-blue;
+  font-family: $heading-font;
+  font-weight: 700;
+  font-size: 2rem;
+
+  @include tablet { 
+    font-size: 2.5rem;
+  }
+
+  @include desktop {
+    font-size: 4rem;
+  }
+}
+
+@mixin text {
+  color: $grey-blue;
+  font-family: $text-font;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.6;
+
+  @include tablet {
+    font-size: 1rem;
+  }
+}
+
+@mixin button { 
+  border-color: transparent;
+  border-style: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: $text-font;
+}
+
+@mixin padding { 
+  padding: 1rem; 
+
+  @include tablet { 
+    padding: 1.5rem;
+  }
+
+  @include laptop { 
+    padding: 1.75rem;
+  }
+
+  @include desktop { 
+    padding: 2rem;
+  }
+}

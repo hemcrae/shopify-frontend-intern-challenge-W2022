@@ -1,0 +1,65 @@
+@use './abstract/mixins.scss' as *;
+@use './abstract/variables.scss' as *;
+
+* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container { 
+  background-color: $lighter-grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include padding;
+}
+
+.header, .input { 
+  margin-bottom: 1rem;
+
+  @include tablet {
+    margin-bottom: 1.5rem;
+  }
+
+  @include laptop { 
+    margin-bottom: 2rem;
+  }
+}
+
+.heading {
+  @include heading;
+}
+
+.main { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  background-color: $lightest-grey;
+  border: 1px solid $light-grey;
+  border-radius: 2px;
+  color: $grey-blue;
+  font-family: $heading-font;
+  min-width: 225px;
+  width: auto;
+  padding: 0.5rem;
+
+  @include tablet { 
+    min-width: 250px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include tablet { 
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
