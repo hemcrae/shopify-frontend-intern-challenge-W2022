@@ -4,20 +4,21 @@
 .card {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   background-color: $lightest-grey;
   height: fit-content;
   outline: 1px solid $light-grey;
 
   @include tablet {
-    padding: 1.25rem;
-    margin-bottom: 2.5rem;
-    width: 350px;
+    padding: 1rem;
+    width: 325px;
+    margin-bottom: 1.5rem;
   }
 
   @include laptop { 
     width: 450px;
+    margin-bottom: 2rem;
   }
 
   @include desktop {
@@ -168,6 +169,6 @@
 }
 
 .likeButtonActive { 
-  background-color: palevioletred;
+  background-color: #0b3d91;
 }
 

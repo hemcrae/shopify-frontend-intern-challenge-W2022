@@ -46,15 +46,19 @@ export const App: React.FC = ({
   )}, [selectedDate])
 
   return (
-    <>
-      <h1 className={classes.heading}>Spacestagram</h1>
-      <input className={classes.input} type="date" min="1995-06-16" value={selectedDate} onChange={(e) => onChange(e)} />
-      <div className={classes.cards}>
-        {apod.map(({ url, title, explanation, date }) => (
-          <Card url={url} key={url} title={title} explanation={explanation} date={date}/>
-        ))}
-      </div>
-    </>
+    <div className={classes.container}>
+      <header className={classes.header}>
+        <h1 className={classes.heading}>Spacestagram</h1>
+      </header>
+      <main className={classes.main}>
+        <input className={classes.input} type="date" min="1995-06-16" value={selectedDate} onChange={(e) => onChange(e)} />
+        <div className={classes.cards}>
+          {apod.map(({ url, title, explanation, date }) => (
+            <Card url={url} key={url} title={title} explanation={explanation} date={date}/>
+          ))}
+        </div>
+      </main>
+    </div>
   )
 }
 

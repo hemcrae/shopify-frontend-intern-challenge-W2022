@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import classes from './Card.module.scss'
 
-
-
 interface CardProps { 
   url: string
   title: string
@@ -31,7 +29,7 @@ export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => 
       setLiked(likesObj[url])
     }
   }, [])
-  
+
   
   return ( 
     <article className={classes.card}>
@@ -54,7 +52,7 @@ export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => 
           Read More
         </button>
         <button className={`${classes.likeButton} ${liked ? classes.likeButtonActive : ''}`} onClick={onLike}>
-          Like
+          {liked ? 'Unlike': 'Like'}
         </button>
       </footer>
     </article>
