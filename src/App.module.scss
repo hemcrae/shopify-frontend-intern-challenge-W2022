@@ -8,19 +8,11 @@
 }
 
 .container { 
+  background-color: $lighter-grey;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $bg-color;
-  padding: 1rem;
-
-  @include tablet {
-    padding: 1.5rem;
-  }
-
-  @include laptop { 
-    padding: 2rem;
-  }
+  @include padding;
 }
 
 .header, .input { 
@@ -46,13 +38,13 @@
 }
 
 .input {
-  font-family: $heading-font;
   background-color: $lightest-grey;
-  width: auto;
   border: 1px solid $light-grey;
   border-radius: 2px;
   color: $grey-blue;
+  font-family: $heading-font;
   min-width: 225px;
+  width: auto;
   padding: 0.5rem;
 
   @include tablet { 

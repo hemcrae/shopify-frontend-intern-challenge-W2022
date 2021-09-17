@@ -1,4 +1,4 @@
-import React, { FormEvent, useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios';
 import classes from './App.module.scss'
 import { Card } from './components/Card/Card';
@@ -13,9 +13,7 @@ export interface NasaApodItem {
   url: string;
 }
 
-export const App: React.FC = ({
-
-}) => {
+export const App: React.FC = () => {
 
   const key: string = import.meta.env.VITE_NASA_API_KEY as string;
 
@@ -32,11 +30,10 @@ export const App: React.FC = ({
   const onChange = useCallback((e: any) => {
     e.preventDefault();
     setSelectedDate(e?.target?.value)
-    },[selectedDate])
-
+  },[selectedDate])
 
   useEffect(() => {
-    axios.get<NasaApodItem[]>(`${ApiUrl}`, {
+    axios.get<NasaApodItem[]>(ApiUrl, {
       params: {
         api_key: key,
         start_date: selectedDate

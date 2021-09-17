@@ -11,7 +11,9 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => {
 
   const [showElement, setShowElement] = useState(false);
+
   const [liked, setLiked] = useState(false);
+
   const onLike = useCallback(() => {
     setLiked(!liked)
     const localStorageLikes = localStorage.getItem('likes') || '{}'
@@ -33,28 +35,28 @@ export const Card: React.FC<CardProps> = ({ url, title, date, explanation }) => 
   
   return ( 
     <article className={classes.card}>
-      <div className={classes.image}>
-        <img className={classes.cardImage} src={url} alt="Astronomy Picture of the Day"/>
-      </div>
-      <header className={classes.heading}>
-        <h2 className={classes.title}>
-          {title}
-        </h2>
-        <time className={classes.date}>
-          {date}
-        </time>
-      </header>
+      <img className={classes.cardImage} src={url} alt="Astronomy Picture of the Day"/>
+      <div className={classes.content}>
+        <header className={classes.header}>
+          <h2 className={classes.title}>
+            {title}
+          </h2>
+          <time className={classes.date}>
+            {date}
+          </time>
+        </header>
         <p className={`${classes.explanation} ${showElement ? classes.showExplanation : ''}`}>
           {explanation}
         </p>
-      <footer className={classes.footer}>
-        <button className={classes.expandButton} onClick={() => setShowElement(!showElement)}>
-          Read More
-        </button>
-        <button className={`${classes.likeButton} ${liked ? classes.likeButtonActive : ''}`} onClick={onLike}>
-          {liked ? 'Unlike': 'Like'}
-        </button>
-      </footer>
+        <footer className={classes.footer}>
+          <button className={classes.expandButton} onClick={() => setShowElement(!showElement)}>
+            Read More
+          </button>
+          <button className={`${classes.likeButton} ${liked ? classes.likeButtonActive : ''}`} onClick={onLike}>
+            {liked ? 'Unlike': 'Like'}
+          </button>
+        </footer>
+      </div>
     </article>
   )
 }

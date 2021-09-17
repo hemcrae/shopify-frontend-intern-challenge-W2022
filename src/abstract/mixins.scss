@@ -49,6 +49,22 @@
   border-color: transparent;
   border-style: none;
   border-radius: 2px;
-  font-family: $text-font;
   cursor: pointer;
+  font-family: $text-font;
+}
+
+@mixin padding { 
+  padding: 1rem; 
+
+  @include tablet { 
+    padding: 1.5rem;
+  }
+
+  @include laptop { 
+    padding: 1.75rem;
+  }
+
+  @include desktop { 
+    padding: 2rem;
+  }
 }

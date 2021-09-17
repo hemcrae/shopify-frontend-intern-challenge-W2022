@@ -2,33 +2,24 @@
 @use '../../abstract/variables.scss' as *;
 
 .card {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
   background-color: $lightest-grey;
   height: fit-content;
+  margin: 1rem;
   outline: 1px solid $light-grey;
 
   @include tablet {
-    padding: 1rem;
-    width: 325px;
     margin-bottom: 1.5rem;
+    width: 325px;
   }
 
   @include laptop { 
-    width: 450px;
     margin-bottom: 2rem;
+    width: 350px;
   }
 
   @include desktop {
-    width: 500px;
+    width: 375px;
   }
-}
-
-.image { 
-  display: flex;
-  justify-content: flex-start;
 }
 
 .cardImage { 
@@ -36,32 +27,24 @@
   width: 100%;
 }
 
-
-.heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 0.5rem 0;
-
-  @include desktop { 
-    padding: 1rem 0;
-  }
+.content { 
+  padding: 1rem
 }
 
-.heading, .explanation, .footer {
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header, .explanation, .footer {
   padding-left: 2px;
   padding-right: 2px;
 }
 
-.title, .date { 
-  font-family: $heading-font;
-  font-weight: 700;
-  line-height: 1.6;
-} 
-
 .title {
-  font-size: 1.125rem;
   color: $dark-blue;
+  font-size: 1.125rem;
 
   @include tablet {
     font-size: 1.25rem;
@@ -72,39 +55,42 @@
   }
 }
 
+.title, .date { 
+  font-family: $heading-font;
+  font-weight: 700;
+  line-height: 1.6;
+} 
+
+
 .date { 
-  font-size: 0.7rem;
   color: $grey-blue;
-  white-space: nowrap;
-  margin-top: 0.2rem;
+  font-size: 0.7rem;
   margin-left: 0.5rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
 
   @include tablet {
     font-size: 0.9rem;
     margin-top: 0.4rem
   }
-
-  @include desktop { 
-    font-size: 1rem;
-  }
 }
 
 .explanation { 
   @include text;
+  height: 70px;
+  margin: 1.5rem 0;
+  overflow: hidden;
   position: relative;
 
-  margin-bottom: 1.5rem;
-  height: 70px;
-  overflow: hidden;
   &::after {
-    position: absolute;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(241,241,241,1) 100%);
     bottom: 0;
-    left: 0;
-    right: 0;
     content: '';
     display: block;
     height: 30px;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(241,241,241,1) 100%);
+    left: 0;
+    position: absolute;
+    right: 0;
   }
 }
 
@@ -135,24 +121,21 @@
     outline: 1px solid $light-grey;
   }
 
-  @include tablet { 
+  @include tablet {
     font-size: 1rem;
-  }
-
-  @include desktop { 
-    font-size: 1.25rem;
-  }
+  } 
 }
 
 .likeButton {
   @include button;
   background-color: $dark-blue;
+  border-radius: 3px;
   color: #FFF;
   font-size: 1rem;
   font-weight: 300;
   padding: 0.125rem 1rem;
-  border-radius: 3px;
   transition: box-shadow 250ms;
+
   &:hover {
     box-shadow: 4px 4px 5px rgba(0,0,0,0.25);
   }
@@ -169,6 +152,6 @@
 }
 
 .likeButtonActive { 
-  background-color: #0b3d91;
+  background-color: $active;
 }
 
