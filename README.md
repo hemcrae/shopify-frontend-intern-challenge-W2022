@@ -2,7 +2,7 @@
 
 ## Spacestagram: Image-sharing from the final frontier
 
-### Live Demo: https://shopify-frontend-intern-challenge-w2022-61b3c2.netlify.app/
+### Live Demo: https://spacestagram-hm.netlify.app/
 
 For the purposes of this project, Shopify is extending our mission to **Make Commerce Better for Everyone** to include the whole entire universe. Please build us an app to help share photos from one of NASA’s image APIs.
 
